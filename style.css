@@ -1,0 +1,178 @@
+/* Reset CSS dasar */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient Background Meriah */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparan */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    animation: fadeIn 1.5s ease-out; /* Animasi saat load */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header dan Judul */
+.main-heading {
+    font-family: 'Pacifico', cursive; /* Font khusus untuk kesan spesial */
+    font-size: 3.5em;
+    color: #e94e77; /* Warna merah muda cerah */
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sub-heading {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #4CAF50; /* Warna hijau ceria */
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* Konten Utama */
+.content-box {
+    border: 3px dashed #FFD700; /* Garis putus-putus emas */
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    background-color: #fff9e6;
+}
+
+.message-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* Tombol Kejutan */
+.surprise-btn {
+    background-color: #241e1d; /* Warna Oranye-Merah */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(60, 50, 46, 0.4);
+    animation: pulse 2s infinite; /* Efek berkedip */
+}
+
+.surprise-btn:hover {
+    background-color: #E64A19;
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 87, 34, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 87, 34, 0); }
+}
+
+/* Pesan Kejutan */
+.surprise-message {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    border-left: 5px solid #e94e77;
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.birthday-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+}
+
+.footer-text {
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* Efek Kembang Api (sangat sederhana tanpa library) */
+.fireworks {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Partikel kembang api (Anda bisa tambahkan lebih banyak dengan JS) */
+.fireworks.active::before,
+.fireworks.active::after {
+    content: '✨'; /* Menggunakan emoji sebagai partikel */
+    position: absolute;
+    font-size: 2em;
+    animation: fireworkExplosion 2s forwards ease-out;
+}
+
+.fireworks.active::before {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0.2s;
+}
+
+.fireworks.active::after {
+    top: 20%;
+    right: 15%;
+    animation-delay: 0.5s;
+}
+
+@keyframes fireworkExplosion {
+    0% { opacity: 1; transform: scale(0.5); }
+    100% { opacity: 0; transform: scale(2) translateY(-50px); }
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    .main-heading {
+        font-size: 2.5em;
+    }
+    .sub-heading {
+        font-size: 1.2em;
+    }
+    .message-text {
+        font-size: 1em;
+    }
+}
